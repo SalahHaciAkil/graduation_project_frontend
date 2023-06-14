@@ -1,1 +1,1 @@
-export { default as TextAreaResult } from "@/app/youtube-video-summarizer/(sections)/TextAreaResult";
+export { default as YoutubeVideoSummarizerView } from "./YoutubeVideoSummarizerView";

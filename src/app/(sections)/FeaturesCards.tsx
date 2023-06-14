@@ -1,51 +1,82 @@
 import Link from "next/link";
 import React from "react";
-
+import {
+  YoutubeI,
+  UserFeelingI,
+  SearchI,
+  MealI,
+  BitcoinI,
+  ImageI,
+} from "@/assests/icons";
+import Image from "next/image";
 interface FeaturesCardProps {
   title: string;
   description: string;
-  icon: string;
+  Icon: string;
   href?: string;
 }
 
 const cards: FeaturesCardProps[] = [
   {
-    title: "Card-0",
+    title: "YouTube Video Summarizer",
     description: `
-    Metadata helps search engines understand your content better (which can result in better SEO), and allows you to customize how your content is presented on
+    Summarize any youtube video by just entering the link, and wait for the magic to happen.
 `,
-    icon: "icon",
+    Icon: YoutubeI,
     href: `/youtube-video-summarizer`,
   },
   {
-    title: "Card-0",
+    title: "User Feeling Analysis",
     description: `
-    The Metadata API in Next.js allows you to modify the <head> element of a page. You can configure metadata in two ways
+    Analyze the feeling of the user by just entering the text and the emotions you want, we will do the rest.
 `,
-    icon: "icon",
-    href: `/`,
+    Icon: UserFeelingI,
+    href: `/user-feeling-analyzer`,
   },
   {
-    title: "Card-0",
+    title: "Meal Planner",
     description: `
-    Additionally, you can create dynamic Open Graph Images using JSX and CSS with
-`,
-    icon: "icon",
-    href: `/`,
+      You don't know what to eat? We got you covered. Just enter the ingredients you have and we will give you a recipe.
+    `,
+    Icon: MealI,
+    href: `/meal-generator`,
+  },
+  {
+    title: "7 Days Bitcoin analyzer",
+    description: `
+    Analyze the bitcoin price for the past 7 days.
+    `,
+
+    Icon: BitcoinI,
+    href: `/7-days-bitcoin-analyzer`,
+  },
+  {
+    title: "Image Generator",
+    // make the description a bit longer
+    description: `
+      Generate great images by just entering the text
+    `,
+
+    Icon: ImageI,
+    href: `/image-generator`,
   },
 ];
 
 function FeaturesCard({
   title,
   description,
-  icon,
+  Icon,
   href,
 }: FeaturesCardProps): JSX.Element {
   return (
     <Link href={`${href}`}>
-      <div className="flex flex-col items-center justify-center p-4 m-4 bg-gradient-to-r w-96 h-48 from-blue-700 to-blue-600 cursor-pointer hover:to-blue-400">
-        <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
-        <p className="">{description}</p>
+      <div
+        style={{ minHeight: "16rem" }}
+        className="flex flex-col rounded-lg items-center justify-center p-4 m-4 bg-gradient-to-r w-96 max-sm:w-full h-full from-primary-800 to-primary-600 cursor-pointer hover:to-primary-400 shadow-2xl"
+      >
+        <Image width={50} height={50} alt="svg_icon" src={Icon}></Image>
+        <h1 className="text-2xl font-semibold text-lime-50 mb-4">{title}</h1>
+        <p className="text-lime-50">{description}</p>
       </div>
     </Link>
   );
@@ -60,8 +91,8 @@ function FeaturesCards(): JSX.Element {
             <FeaturesCard
               key={index}
               href={_.href}
-              icon={_.icon}
-              title={`Card-${index}`}
+              Icon={_.Icon}
+              title={_.title}
               description={_.description}
             />
           );

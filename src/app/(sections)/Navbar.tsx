@@ -3,6 +3,7 @@ import React from "react";
 // apply all ts features to this file when needed
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "@/app/(sections)/Logo";
 
 interface navLinkProps {
   link: string;
@@ -22,10 +23,10 @@ function Navbar(): JSX.Element {
   const pathname: string = usePathname();
   return (
     <>
-      <div className="">
-        <ul className="w-full flex justify-center items-center p-4 bg-white">
+      <div className="w-full flex justify-between items-center p-4 lg:px-40 sm:px-20 px-10 bg-white">
+        <Logo href="/" />
+        <ul className="">
           {navLinks.map(({ link, href }: navLinkProps, index: number) => {
-            console.log(href, pathname);
             const isActive: boolean = pathname.startsWith(href);
             return (
               <li key={link}>

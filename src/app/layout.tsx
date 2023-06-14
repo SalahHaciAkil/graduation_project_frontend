@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Navbar, OpenAiInputKey } from "@/app/(sections)";
+import { GlobalContextProvider } from "@/Context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <OpenAiInputKey />
-        {children}
+        <GlobalContextProvider>
+          <Navbar />
+          <OpenAiInputKey />
+          {children}
+        </GlobalContextProvider>
       </body>
     </html>
   );

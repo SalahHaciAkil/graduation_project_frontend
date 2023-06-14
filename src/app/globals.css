@@ -6,17 +6,23 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --text-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
+
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: rgb(242, 242, 242);
+    /* great dark, not so dark */
+    --background-end-rgb: rgb(28, 28, 30);
+
+    --text-color: #000000;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-end-rgb);
+  color: var(--text-color);
 }
