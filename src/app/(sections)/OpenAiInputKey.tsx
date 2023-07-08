@@ -15,7 +15,10 @@ function OpenAiInputKey(): JSX.Element {
           className="p-4 m-4 bg-gray-100 rounded-lg border-2 border-gray-200 outline-none text-black max-sm:w-full max-sm:m-2"
           placeholder="Enter your OpenAI API key here"
         />
-        <Alert text="center" color="yellow" style="mx-4">
+        <Alert
+          text="center"
+          style="mx-4 text-yellow-800 bg-yellow-50 dark:text-yellow-300"
+        >
           <>
             You don't have an OpenAI API key ? create one{" "}
             <a
