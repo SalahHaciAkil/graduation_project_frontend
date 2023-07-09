@@ -13,7 +13,7 @@ function OpenAiInputKey(): JSX.Element {
           onChange={(e) => set_openai_api_key(e.target.value.trim())}
           type="text"
           className="p-4 m-4 bg-gray-100 rounded-lg border-2 border-gray-200 outline-none text-black max-sm:w-full max-sm:m-2"
-          placeholder="Enter your OpenAI API key here"
+          placeholder="Enter your OpenAI API key here..."
         />
         <Alert
           text="center"
