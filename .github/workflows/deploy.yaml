@@ -28,7 +28,6 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          options: -vvv
           script: |
             cd /home/salah
             ./pull_updates.sh client
