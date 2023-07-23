@@ -42,7 +42,7 @@ const cards: FeaturesCardProps[] = [
     href: `/meal-generator`,
   },
   {
-    title: "7 Days Bitcoin analyzer",
+    title: "7 Days Bitcoin Analyzer",
     description: `
     Analyze the bitcoin price for the past 7 days.
     `,
