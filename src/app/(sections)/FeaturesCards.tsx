@@ -26,7 +26,7 @@ const cards: FeaturesCardProps[] = [
     href: `/youtube-video-summarizer`,
   },
   {
-    title: "User Feeling Analysis",
+    title: "User Emotions Analysis",
     description: `
     Analyze the feeling of the user by just entering the text and the emotions you want, we will do the rest.
 `,
